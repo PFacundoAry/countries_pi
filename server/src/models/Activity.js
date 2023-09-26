@@ -11,19 +11,18 @@ module.exports = (sequelize) => {
             allowNull: false
         },
         difficulty: {
-            type: DataTypes.INTEGER,
-            validate: {
-                isBetween1And5: function(value) {
-                    if (value < 1 || value > 5) {
-                      throw new Error('El número debe estar entre 1 y 5.');
-                    }
-                  }
-            },
+            type: DataTypes.ENUM('1','2','3','4','5'), // valido solo numeros del 1 al 5
+            allowNull: false
+        },
+        duration: {
+            type: DataTypes.STRING,
             allowNull: false
         },
         season: {
-            type: DataTypes.STRING,
+            type: DataTypes.ENUM('Summer','Autumn','Winter','Spring'), 
             allowNull: false
         }
+    } , {
+        timestamps : false
     });
 };

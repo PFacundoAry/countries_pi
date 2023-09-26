@@ -1,0 +1,3 @@
+// Que hacen los Handlers(Manejadores)?
+// Manejan los errores con el trycatch, utiliza al controlador y envia la respuesta al cliente. Agarra la info de que se pide por req.query, req.params y req.body.
+

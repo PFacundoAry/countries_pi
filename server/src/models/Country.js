@@ -5,25 +5,18 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Country', {
     id: {
-      type: DataTypes.STRING(3),
-      primaryKey: true,
-      validate: {
-        isThreeLetters: function(value) {
-          if (!/^[a-zA-Z]{3}$/.test(value)) { // asegurar que el código sea de tres letras 
-            throw new Error("El codigo debe contener exactamente tres letras.");
-            }
-        }
-      }
+      type: DataTypes.CHAR(3),
+      primaryKey: true
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    img: {
+    flags: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    continent: {
+    continents: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -31,9 +24,19 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    subregion: {
+      type: DataTypes.STRING,
+      allowNull:false
+    },
+    area: {
+      type: DataTypes.INTEGER,
+      allowNull:false
+    },
     population: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
+  } , {
+    timestamps : false
   });
 };

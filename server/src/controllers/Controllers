@@ -1,0 +1,3 @@
+// Que hacen los Controladores (Controlers)?
+// Manejan toda la lógica que hagamos e interactuan con las fuentes 
+// externas que serían en este caso la api y la base de datos
